@@ -7,7 +7,7 @@ import Banner from "../Banner/Banner";
 
 
 const Home = () => {
-
+ 
     const brandInfo = useLoaderData()
     return (
         <div>
