@@ -11,7 +11,7 @@ const ContactUs = () => {
                         <p className="lg:text-3xl text-xl mb-5 font-semibold text-[#3b644c]">Feel Free To Write</p>
                     </div>
 
-
+ 
                     <form>
                         <div className="flex justify-between">
                             <input className="border lg:w-[300px] lg:p-2 p-1" type="text" name="name" placeholder="Your name" id="" />
