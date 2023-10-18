@@ -1,11 +1,23 @@
 import { Link, NavLink } from "react-router-dom";
 import Banner from "../Banner/Banner";
+import { useContext } from "react";
+import { AuthProvider } from "../AuthContributor/AuthContibutor";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+
+    const { user, userLogOut } = useContext(AuthProvider);
+
+    const handleLogOut = () => {
+        userLogOut()
+            .then(() => console.log("You logged out successfully"))
+            .catch(error => console.error(error))
+    }
+
     return (
         <>
 
-            <div className="dropdown justify-evenly flex items-center py-5">
+            {/* <div className="dropdown justify-evenly flex items-center py-5">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </label>
@@ -26,7 +38,7 @@ const Navbar = () => {
                     <Link to='/login'> <button className="btn lg:p-2 p-1 bg-[#a5c7b5] text-[#3b644c]">Login</button></Link>
                     <Link to='/register'><button className="btn lg:p-2 p-1 bg-[#a5c7b5] text-[#3b644c]">Register</button></Link>
                 </div>
-            </div>
+            </div> */}
 
 
             <div className="lg:flex hidden justify-evenly items-center ">
@@ -63,11 +75,26 @@ const Navbar = () => {
 
                 <div className="flex gap-5 items-center">
                     <div className="flex items-center gap-3">
-                        <img className="h-[50px] rounded-full" src="https://i.ibb.co/nP2Y7Y9/user.png" alt="" />
-                        <p className="text-xl text-[#3b644c] lg:font-bold">Name</p>
+
+                        <div>
+                            {user ? <img className="h-[50px] rounded-full" src={user.photoURL} alt="" /> : " "}
+                        </div>
+                        <p className="text-xl text-[#3b644c] lg:font-bold">
+                            {
+                                user && <span>{user.displayName}</span>
+                            }
+                        </p>
                     </div>
-                    <Link to='/login'>  <button className="btn p-2 text-xl font-bold bg-[#3b644c] text-white">Login</button></Link>
-                    <Link to='/register'> <button className="btn p-2 text-xl font-bold bg-[#3b644c] text-white">Register</button></Link>
+                    {
+                        user ? " " : <div>
+                            <Link to='/login'>  <button className="btn p-2 text-xl font-bold bg-[#3b644c] text-white hover:bg-slate-600">Login</button></Link>
+                            <Link to='/register'> <button className="btn p-2 text-xl font-bold bg-[#3b644c] hover:bg-slate-600 text-white">Register</button></Link>
+                        </div>
+                    }
+
+                    {
+                        user ? <button onClick={handleLogOut} className="btn p-2 text-xl font-bold bg-[#3b644c] hover:bg-slate-600 text-white">SignOut</button> : " "
+                    }
                 </div>
             </div>
 

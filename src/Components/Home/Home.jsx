@@ -7,13 +7,13 @@ import Banner from "../Banner/Banner";
 
 
 const Home = () => {
- 
+
     const brandInfo = useLoaderData()
     return (
         <div>
-            <Banner></Banner>
+
             <div className="lg:block hidden">
-            
+                <Banner></Banner>
                 <Service></Service>
             </div>
             <h1 className="lg:text-6xl text-4xl font-semibold text-center mt-5 text-[#3b644c]">
