@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "brand_name": "Loreal",
+        "image": "https://i.ibb.co/R9wc7SL/Loreal-398x398.webp"
+    },
+    {
+        "id": 2,
+        "brand_name": "CORX",
+        "image": "https://i.ibb.co/XD1LXc6/Cosrx-398x398.webp"
+    },
+    {
+        "id": 3,
+        "brand_name": "Biodarma",
+        "image": "https://i.ibb.co/VJxPvrZ/Bioderma-398x398.webp"
+    },
+    {
+        "id": 4,
+        "brand_name": "Cerave",
+        "image": "https://i.ibb.co/VCksRhz/Cerave-398x398.webp"
+    },
+    {
+        "id": 5,
+        "brand_name": "Beauty of Jeason",
+        "image": "https://i.ibb.co/gZCZTWD/beauty-beauty-of-joseon-glow-deep-serum-agetune-1-removebg-preview.png"
+    },
+    {
+        "id": 6,
+        "brand_name": "The Ordinary",
+        "image": "https://i.ibb.co/PjTxvwt/t.webp"
+    }
+]
