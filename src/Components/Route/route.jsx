@@ -6,6 +6,10 @@ import Home from "../Home/Home";
 import Brands from "../Brands/Brands";
 import BeautyTips from "../BeautyTips/BeautyTips";
 import ContactUs from "../ContactUs/ContactUs";
+import AddProduct from "../AddProduct/AddProduct";
+import Cart from "../Cart/Cart";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
 
   const router = createBrowserRouter([
     {
@@ -28,6 +32,22 @@ import ContactUs from "../ContactUs/ContactUs";
         {
             path: '/contactus',
             element:<ContactUs></ContactUs>
+        },
+        {
+          path:'/addproduct',
+          element:<AddProduct></AddProduct>
+        },
+        {
+          path:'/cart',
+          element: <Cart></Cart>
+        },
+        {
+          path:'/login',
+          element:<Login></Login>
+        },
+        {
+          path: '/register',
+          element: <Register></Register>
         }
       ]
     

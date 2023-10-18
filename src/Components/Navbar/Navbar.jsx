@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <>
 
-            <div className="dropdown justify-evenly flex items-center ">
+            <div className="dropdown justify-evenly flex items-center py-5">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </label>
@@ -15,7 +15,7 @@ const Navbar = () => {
                     <NavLink to="services">Beauty Tips</NavLink>
                     <NavLink to="/gallery">Contact us</NavLink>
                 </ul>
-                <div className="lg:hidden">
+                <div className="hidden">
                     <Link to="/"> <img data-aos="zoom-out-left" className="h-[120px] mx-4" src="https://i.ibb.co/B6bFTHh/shop-Logo-removebg-preview.png" alt="" /></Link>
                 </div>
                 <div className="flex lg:hidden gap-5 items-center">
@@ -23,7 +23,8 @@ const Navbar = () => {
                         <img className="lg:h-[50px] h-[30px]" src="https://i.ibb.co/nP2Y7Y9/user.png" alt="" />
                         <p className="text-sm font-semibold text-[#3b644c]">Name</p>
                     </div>
-                    <button className="btn lg:p-2 p-1 bg-[#a5c7b5] text-[#3b644c]">Login</button>
+                    <Link to='/login'> <button className="btn lg:p-2 p-1 bg-[#a5c7b5] text-[#3b644c]">Login</button></Link>
+                    <Link to='/register'><button className="btn lg:p-2 p-1 bg-[#a5c7b5] text-[#3b644c]">Register</button></Link>
                 </div>
             </div>
 
@@ -65,10 +66,11 @@ const Navbar = () => {
                         <img className="h-[50px] rounded-full" src="https://i.ibb.co/nP2Y7Y9/user.png" alt="" />
                         <p className="text-xl text-[#3b644c] lg:font-bold">Name</p>
                     </div>
-                    <button className="btn p-2 text-xl font-bold bg-[#3b644c] text-white">Login</button>
+                    <Link to='/login'>  <button className="btn p-2 text-xl font-bold bg-[#3b644c] text-white">Login</button></Link>
+                    <Link to='/register'> <button className="btn p-2 text-xl font-bold bg-[#3b644c] text-white">Register</button></Link>
                 </div>
             </div>
-           <Banner></Banner>
+
         </>
     );
 };

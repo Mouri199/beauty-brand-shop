@@ -4,7 +4,7 @@ const Service = () => {
     return (
         <div>
             <div className="flex justify-evenly py-44 items-center">
-                <div>
+                <div data-aos="fade-up-right" >
                     <div className="relative">
                         <img src="https://i.ibb.co/R3cVjhV/skincare-in-spa-2021-09-24-03-47-47-utc.jpg" alt="" />
                     </div>
