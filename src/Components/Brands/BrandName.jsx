@@ -12,7 +12,7 @@ const BrandName = ({ Info }) => {
                     <img src={image} alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="card-body items-center text-center">
-                    <h2 className="lg:text-4xl text-2xl font-semibold text-[#3b644c]">{brand_name}</h2>
+                    <h2 className="lg:text-4xl text-2xl font-semibold">{brand_name}</h2>
                   <Link to={`/brandDetails/${_id}`}>  <button className="btn lg:p-2 p-1 bg-[#3b644c] text-white ">Show More</button></Link>
                 </div>
             </div>

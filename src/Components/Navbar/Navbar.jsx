@@ -71,7 +71,7 @@ const Navbar = () => {
 
                     <div>
                         < nav>
-                            <ul className="flex lg:text-3xl text-[#3b644c] font-medium gap-10">
+                            <ul className="flex lg:text-3xl font-semibold ont-medium gap-10">
 
                                 <li>
                                     <Link to='/'>Home</Link>
@@ -102,7 +102,7 @@ const Navbar = () => {
                             <div>
                                 {user ? <img className="h-[50px] rounded-full" src={user.photoURL} alt="" /> : " "}
                             </div>
-                            <p className="text-xl text-[#3b644c] lg:font-bold">
+                            <p className="text-xl  lg:font-bold">
                                 {
                                     user && <span>{user.displayName}</span>
                                 }
