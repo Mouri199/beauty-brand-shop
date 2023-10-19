@@ -1,8 +1,21 @@
+import { useState } from "react";
 import AddBanner from "./AddBanner";
 import Swal from "sweetalert2";
 
 
 const AddProduct = () => {
+
+    const [value,setValue] = useState(' ');
+    const options = [
+        {label: "Skin Care", value:1},
+        {label:"Hair Care", value:2},
+        {label:"Serum",value:3},
+        {label:"Toner",value:4}
+    ]
+
+    const handleSelect = (e) =>{
+        setValue(e.target.value)
+    }
 
     const handleAdded = e => {
         e.preventDefault()
@@ -17,7 +30,7 @@ const AddProduct = () => {
         const addProduct = { name, brand, type, image, price, short };
         console.log(addProduct);
 
-        fetch('http://localhost:8000/addproducts', {
+        fetch('http://localhost:8000/brands', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -62,9 +75,17 @@ const AddProduct = () => {
                             <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Image</p>
                             <input type="text" name="image" placeholder="Enter URL" className="border lg:p-3 p-2 lg:w-[400px]" />
                         </div>
-                        <div>
+                        <div >
                             <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Type</p>
+
                             <input type="text" name="type" placeholder="Enter product type" className="border lg:p-3 p-2 lg:w-[400px]" />
+                            <select className="form-select absolute lg:right-[600px] right-[10px] lg:top-[870px] top-[540px]" onChange={handleSelect}>
+                                {
+                                    options.map(option => (
+                                        <option value={option.value}>{option.label}</option>
+                                    ))
+                                }
+                            </select>
                         </div>
                     </div>
                     <div className="flex gap-5">
