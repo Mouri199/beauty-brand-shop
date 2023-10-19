@@ -12,7 +12,7 @@ const Service = () => {
                         <img src="https://i.ibb.co/qkfJ8xT/cosmetology-and-professional-skin-care-2022-03-01-10-18-13-utc.jpg" alt="" />
                     </div>
                 </div>
-                <div className="lg:w-[800px]">
+                <div className="lg:w-[800px] text-[#3b644c]">
                     <h3 className="lg:text-3xl mb-3 font-medium ">About Entice</h3>
                     <h2 className="lg:text-5xl mb-5 font-semibold ">When You Look Good You Feel Good</h2>
                     <p className="  lg:text-2xl">Maxime sequi quasi quas iste odio, voluptates placeat nobis cum harum a doloremque aperiam non ea eius dolorem perferendis vel, sunt doloribus veniam excepturi repellendus soluta architecto. Vitae nisi placeat, aut doloremque inventore pariatur dignissimos laudantium nesciunt.</p>

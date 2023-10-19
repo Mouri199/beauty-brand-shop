@@ -4,7 +4,7 @@ const Footer = () => {
         <div className="mt-10">
            
             <div className="bg-[#a5c7b5] p-5">
-                <div className="text-center py-5">
+                <div className="text-center py-5 text-[#3b644c]">
                     <h3 className="lg:text-5xl text-3xl mb-7 font-bold">Entice</h3>
                     <p className="lg:text-3xl text-xl mb-7  font-semibold">We do not spam.We send offers instead</p>
                     <label>

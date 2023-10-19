@@ -4,8 +4,8 @@ import { AiFillFacebook, AiFillGoogleCircle, AiFillInstagram, AiFillTwitterCircl
 const ExpartTeam = () => {
     return (
         <div>
-            <div className="text-center my-20 ">
-                <h3 className="lg:text-3xl font-semibold text-xl">Our Team</h3>
+            <div className="text-center my-20 text-[#3b644c] ">
+                <h3 className="lg:text-3xl font-semibold text-xl ">Our Team</h3>
                 <h1 className="lg:text-5xl font-bold text-3xl">Our Beauty Experts</h1>
             </div>
             <div className="lg:flex justify-center mx-6 gap-10 py-10">
