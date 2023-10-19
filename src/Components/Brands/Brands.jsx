@@ -1,9 +1,17 @@
 
+import Banner from "../Banner/Banner";
+
+
+
 
 const Brands = () => {
+
+    // const brandData = useLoaderData()
     return (
         <div>
-            Hello from Brands
+            <Banner></Banner>
+          
+            {/* <BrandBanner></BrandBanner> */}
         </div>
     );
 };

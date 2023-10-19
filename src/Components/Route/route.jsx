@@ -11,6 +11,7 @@ import Cart from "../Cart/Cart";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import BrandDetails from "../Brands/BrandDetails";
 
   const router = createBrowserRouter([
     {
@@ -20,11 +21,17 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
         {
             path:'/',
             element: <Home></Home>,
-            loader: () => fetch ('/public/brandData.json')
+            loader: () => fetch ('http://localhost:8000/brands')
         },
         {
             path:'/brands',
             element: <Brands></Brands>
+            // loader: () => fetch('http://localhost:8000/bDetails')
+        },
+        {
+          path: '/brandDetails/:_id',
+          element: <BrandDetails></BrandDetails>,
+          loader: () => fetch('http://localhost:8000/brands')
         },
         {
             path: '/beautytips',

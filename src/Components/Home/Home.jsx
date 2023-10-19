@@ -3,7 +3,8 @@ import BrandName from "../Brands/BrandName";
 import Service from "./Service";
 import Ourservice from "./Ourservice";
 import ExpartTeam from "./ExpartTeam";
-import Banner from "../Banner/Banner";
+
+import BrandBanner from "../Brands/BrandBanner";
 
 
 const Home = () => {
@@ -11,9 +12,9 @@ const Home = () => {
     const brandInfo = useLoaderData()
     return (
         <div>
-
+               <BrandBanner></BrandBanner>
             <div className="lg:block hidden">
-                <Banner></Banner>
+                
                 <Service></Service>
             </div>
             <h1 className="lg:text-6xl text-4xl font-semibold text-center mt-5 text-[#3b644c]">
