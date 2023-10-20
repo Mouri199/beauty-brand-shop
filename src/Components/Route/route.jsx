@@ -11,6 +11,7 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import BrandDetails from "../Brands/BrandDetails";
+import Update from "../Brands/Update";
 
 const router = createBrowserRouter([
   {
@@ -20,16 +21,21 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:8000/brands')
+        loader: () => fetch('https://entice-server-7g2onuih2-mouris-projects.vercel.app/brands')
       },
       {
         path: '/brandDetails/:id',
         element: <BrandDetails></BrandDetails>,
-        loader: ({params}) => fetch(`http://localhost:8000/brands/${params.id}`)
+        loader: ({ params }) => fetch(`hhttps://entice-server-7g2onuih2-mouris-projects.vercel.app/brands/${params.id}`)
       },
       {
         path: '/beautytips',
         element: <BeautyTips></BeautyTips>
+      },
+      {
+        path: '/update/:id',
+        element: <Update></Update>,
+        loader: ({ params }) => fetch(`https://entice-server-7g2onuih2-mouris-projects.vercel.app/brands/${params.id}`)
       },
       {
         path: '/contactus',

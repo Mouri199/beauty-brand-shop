@@ -1,12 +1,12 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import DetailsBanner from "./DetailsBanner";
 
 
 
 const BrandDetails = () => {
     const brandData = useLoaderData()
-    const {  brand_name, image_1, image_2, image_3, image_4, image_5, image_6, image_7, image_8, name1, name2, name3, name4, name5, name6, name7, name8, type } = brandData
-
+    const { _id,brand_name, image_1, image_2, image_3, image_4, image_5, image_6, image_7, image_8, name1, name2, name3, name4, name5, name6, name7, name8, type } = brandData
+    // console.log(brandData);
     // const param = useParams();
     // const brands = brandData.find(datas => datas._id == param._id)
 
@@ -35,6 +35,8 @@ const BrandDetails = () => {
     //         }
     //     }
 
+
+
     return (
         <div>
 
@@ -60,7 +62,7 @@ const BrandDetails = () => {
                         </div>
                         <div className="flex justify-between">
                             <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">View Details </button>
-                            <button onClick={handleAddCart} className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Add Cart</button>
+                            <Link>   <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Update</button></Link>
                         </div>
                     </div>
                 </div>
@@ -77,7 +79,7 @@ const BrandDetails = () => {
                         </div>
                         <div className="flex justify-between">
                             <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">View Details </button>
-                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Add Cart</button>
+                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Update</button>
                         </div>
                     </div>
                 </div>
@@ -94,7 +96,7 @@ const BrandDetails = () => {
                         </div>
                         <div className="flex justify-between">
                             <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">View Details </button>
-                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Add Cart</button>
+                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Update</button>
                         </div>
                     </div>
                 </div>
@@ -111,7 +113,7 @@ const BrandDetails = () => {
                         </div>
                         <div className="flex justify-between">
                             <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">View Details </button>
-                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Add Cart</button>
+                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Update</button>
                         </div>
                     </div>
                 </div>
@@ -128,7 +130,7 @@ const BrandDetails = () => {
                         </div>
                         <div className="flex justify-between">
                             <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">View Details </button>
-                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Add Cart</button>
+                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Update</button>
                         </div>
                     </div>
                 </div>
@@ -145,7 +147,7 @@ const BrandDetails = () => {
                         </div>
                         <div className="flex justify-between">
                             <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">View Details </button>
-                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Add Cart</button>
+                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Update</button>
                         </div>
                     </div>
                 </div>
@@ -162,7 +164,7 @@ const BrandDetails = () => {
                         </div>
                         <div className="flex justify-between">
                             <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">View Details </button>
-                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Add Cart</button>
+                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Update</button>
                         </div>
                     </div>
                 </div>
@@ -179,7 +181,7 @@ const BrandDetails = () => {
                         </div>
                         <div className="flex justify-between">
                             <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">View Details </button>
-                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Add Cart</button>
+                            <button className=" btn p-2 rounded-lg bg-[#3b644c] text-white mb-5">Update</button>
                         </div>
                     </div>
                 </div>
