@@ -1,37 +1,56 @@
 import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Update = () => {
 
     const product = useLoaderData()
     console.log(product);
-    const { _id, Image, Name, Type, Price, Rating, BrandName } = product
 
-    useEffect(() => {
-        
+    const { Description, BrandName
+        , Image, Name, Price } = product
+ 
 
-    })
+    const handleUpdate = e => {
+        e.preventDefault()
+        const form = e.target;
+        const name = form.name.value;
+        const image = form.image.value;
+        const brand = form.brand.value;
+        const type = form.type.value;
+        const price = form.price.value;
+        const short = form.short.value;
 
+        const addProduct = { name, brand, type, image, price, short };
+        console.log(addProduct);
 
-    // const handleUpdate = e => {
-    //     e.preventDefault()
-    //     const form = e.target;
-    //     const name = form.name.value;
-    //     const image = form.image.value;
-    //     const brand = form.brand.value;
-    //     const type = form.type.value;
-    //     const price = form.price.value;
-    //     const short = form.short.value;
-
-    //     const addProduct = { name, brand, type, image, price, short };
-    //     console.log(addProduct);
-    // }
+        fetch(`http://localhost:8000/brands/${_id}`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addProduct)
+        }
+        )
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Sign In Successful",
+                        text: "You have successfully signed in!",
+                    });
+                    form.reset()
+                }
+            })
+    }
 
     return (
         <div>
 
-            <p>{Name}</p>
-            {/* <div className=" bg-[#a5c7b5] my-10 mx-auto lg:px-10 py-20 lg:w-[1000px]">
+           
+            <div className=" bg-[#a5c7b5] my-10 mx-auto lg:px-10 py-20 lg:w-[1000px]">
                 <h3 className="text-center lg:text-5xl font-semibold text-[#3b644c] mb-5">Update Products</h3>
                 <form onSubmit={handleUpdate}>
                     <div className="flex gap-5">
@@ -72,7 +91,7 @@ const Update = () => {
                     </div>
 
                 </form>
-            </div> */}
+            </div>
         </div>
     );
 };

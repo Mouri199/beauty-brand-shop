@@ -1,44 +1,20 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import CartData from "./CartData";
+import { useState } from "react";
 
 
 const Cart = () => {
-
-    const [cartAdded, setCartAdded] = useState([])
-    const [noData, setNoData] = useState(false)
-    const [isShow, setIsShow] = useState(false)
-
-    useEffect(() => {
-        const addCart = JSON.parse(localStorage.getItem('addCart'));
-        if (addCart) {
-            setCartAdded(addCart)
-        }
-        else {
-            setNoData("No Data Found")
-        }
-    }, [])
-
-    console.log(cartAdded);
-
+    const cartInfo = useLoaderData();
+    const [coffees,setCofees] = useState(cartInfo)
+    console.log(cartInfo);
 
     return (
         <div>
-            {
-                noData ? <p className="h-[80vh] flex justify-center items-center font-semibold text-4xl">{noData}</p> :
-                    (<div>
-                        <div>
-                            {
-                                isShow ? cartAdded.map(card => <CartData key={card._id} card={card}></CartData>) : cartAdded.slice(0, 4).map(card => <CartData key={card._id} card={card}></CartData>)
-                            }
-                        </div>
-                        <div>
-                            {
-                                cartAdded.length >= 4 && <button onClick={() => setIsShow(!isShow)} className=""> {isShow ? "See Less" : "See More"}</button>
-                            }
-                        </div>
-                    </div>)
-            }
+            <div className="grid mx-5 lg:mx-10 gap-10 lg:grid-cols-3 grid-cols-1 mt-20">
+                {
+                    cartInfo.map(itemData => <CartData key={itemData._id} ItemData={itemData} coffes={coffees} setCofees={setCofees}></CartData>)
+                }
+            </div>
         </div>
     );
 };

@@ -34,11 +34,11 @@ const router = createBrowserRouter([
         path: '/beautytips',
         element: <BeautyTips></BeautyTips>
       },
-      {
-        path: '/update/:id',
-        element: <Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:8000/brands/${params.id}`)
-      },
+      // {
+      //   path: '/update/:id',
+      //   element: <Update></Update>,
+      //   loader: ({ params }) => fetch(`http://localhost:8000/brands/${params.id}`)
+      // },
       {
         path: '/contactus',
         element: <ContactUs></ContactUs>
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart></Cart>,
-        loader: () => fetch('http://localhost:8000/brands')
+        loader: () => fetch(`http://localhost:8000/cart`)
       },
       {
         path: '/login',

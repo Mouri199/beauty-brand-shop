@@ -1,9 +1,5 @@
 
 import { Link } from "react-router-dom";
-import Banner from "../Banner/Banner";
-
-
-
 
 const Brands = ({ item }) => {
     const {_id, Image,Name,Type,Price,Rating,BrandName } = item || {}
@@ -33,3 +29,4 @@ const Brands = ({ item }) => {
 };
 
 export default Brands;
+
