@@ -7,8 +7,8 @@ const Update = () => {
     const product = useLoaderData()
     console.log(product);
 
-    const { Description, BrandName
-        , Image, Name, Price } = product
+    const {Description, BrandName
+        , Image, Name, Price,Type } = product
  
 
     const handleUpdate = e => {
@@ -21,11 +21,11 @@ const Update = () => {
         const price = form.price.value;
         const short = form.short.value;
 
-        const addProduct = { name, brand, type, image, price, short };
+        const addProduct = { Name:name, BrandName:brand, Description:short,Type:type, Image:image, Price:price  };
         console.log(addProduct);
 
-        fetch(`https://entice-server.vercel.app/brands/${_id}`, {
-            method: 'POST',
+        fetch(`https://entice-server.vercel.app/product/${product?._id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -35,13 +35,13 @@ const Update = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount) {
                     Swal.fire({
                         icon: "success",
-                        title: "Sign In Successful",
-                        text: "You have successfully signed in!",
+                        title: "Product Update",
+                        text: "You have successfully update product!",
                     });
-                    form.reset()
+                    // form.reset()
                 }
             })
     }
@@ -55,39 +55,39 @@ const Update = () => {
                 <form onSubmit={handleUpdate}>
                     <div className="flex gap-5">
                         <div>
-                            <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Product Name</p>
-                            <input type="text" name="name" placeholder="Enter product name" className="border lg:p-3 p-2 lg:w-[400px]" />
+                            <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Name</p>
+                            <input type="text" name="name" placeholder="Enter product name" defaultValue={Name} className="border lg:p-3 p-2 lg:w-[400px]" />
                         </div>
                         <div>
-                            <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Brand</p>
-                            <input type="text" name="brand" placeholder="Enter brand name" className="border lg:p-3 p-2 lg:w-[400px]" />
+                            <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Brand Name</p>
+                            <input type="text" name="brand" placeholder="Enter brand name" defaultValue={BrandName} className="border lg:p-3 p-2 lg:w-[400px]" />
                         </div>
                     </div>
                     <div className="flex gap-5">
                         <div>
                             <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Image</p>
-                            <input type="text" name="image" placeholder="Enter URL" className="border lg:p-3 p-2 lg:w-[400px]" />
+                            <input type="text" name="image" placeholder="Enter URL" defaultValue={Image} className="border lg:p-3 p-2 lg:w-[400px]" />
                         </div>
                         <div >
                             <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Type</p>
 
-                            <input type="text" name="type" placeholder="Enter product type" className="border lg:p-3 p-2 lg:w-[400px]" />
+                            <input type="text" name="type" placeholder="Enter product type" defaultValue={Type} className="border lg:p-3 p-2 lg:w-[400px]" />
                          
                         </div>
                     </div>
                     <div className="flex gap-5">
                         <div>
                             <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Price</p>
-                            <input type="text" name="price" placeholder="Enter Price" className="border lg:p-3 p-2 lg:w-[400px]" />
+                            <input type="text" name="price" placeholder="Enter Price" defaultValue={Price} className="border lg:p-3 p-2 lg:w-[400px]" />
                         </div>
                         <div>
-                            <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Short Description</p>
-                            <input type="text" name="short" placeholder="Enter product description" className="border lg:p-3 p-2 lg:w-[400px]" />
+                            <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Short</p>
+                            <input type="text" name="short" placeholder="Enter product description" defaultValue={Description} className="border lg:p-3 p-2 lg:w-[400px]" />
                         </div>
                     </div>
 
                     <div className="mt-6 ">
-                        <button className="btn-sm ml-0 lg:ml-[450px] rounded-lg mx-12 bg-[#3b644c] text-white">Add Product</button>
+                        <button type='submit' className="btn-sm ml-0 lg:ml-[450px] rounded-lg mx-12 bg-[#3b644c] text-white">Add Product</button>
                     </div>
 
                 </form>

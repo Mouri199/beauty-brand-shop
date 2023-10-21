@@ -47,7 +47,7 @@ const Register = () => {
                 Swal.fire({
                     icon: "success",
                     title: "Sign In Successful",
-                    text: "You have successfully signed in!",
+                    text: "You have register successfully!",
                 });
 
             })

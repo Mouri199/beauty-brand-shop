@@ -5,19 +5,28 @@ import Ourservice from "./Ourservice";
 import ExpartTeam from "./ExpartTeam";
 
 import BrandBanner from "../Brands/BrandBanner";
+import { useEffect, useState } from "react";
 
 
 
 const Home = () => {
-    
 
-    const brandInfo = useLoaderData();
-console.log(brandInfo);
-  
+    const [brandInfo, setBrandInfo] = useState([])
+
+    useEffect(() => {
+        fetch("https://entice-server.vercel.app/brands")
+            .then(res => res.json())
+            .then(data => {
+                setBrandInfo(data);
+            })
+    }, [])
+
+    console.log(brandInfo);
+
     return (
         <div >
 
-          
+
             <BrandBanner></BrandBanner>
             <div className="lg:block hidden">
 
@@ -37,7 +46,7 @@ console.log(brandInfo);
             <div className="lg:flex gap-32 items-center bg-[#a5c7b5] lg:px-32 lg:py-10">
                 <div className="lg:w-[800px] text-[#3b644c]">
                     <h3 className="lg:text-5xl text-3xl lg:mx-0 mx-8 font-semibold  mb-8">Everything
-                       <span className="text-[#3b644c]"> You Need to Create</span> a Beauty Website</h3>
+                        <span className="text-[#3b644c]"> You Need to Create</span> a Beauty Website</h3>
                     <p className="lg:text-3xl text-xl lg:mx-0 mx-8 mb-5">Beautifo offers stunning beauty designs and layouts for cosmetics shop, make up and beauty spa with multiple styles.</p>
                     <button className="btn bg-[#3b644c] hover:bg-slate-600 lg:ml-0 ml-36 mb-8 text-white">SHOP NOW</button>
                 </div>

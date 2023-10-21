@@ -39,8 +39,8 @@ const AddProduct = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         icon: "success",
-                        title: "Sign In Successful",
-                        text: "You have successfully signed in!",
+                        title: "Add Product",
+                        text: "You have successfully added product!",
                     });
                     form.reset()
                 }
@@ -97,7 +97,7 @@ const AddProduct = () => {
             <div className="grid lg:grid-cols-4 grid-cols-1 lg:mx-32 mx-10 gap-10">
 
                 {
-                    product.map(item => <Product key={item._id} Item={item}></Product>)
+                    product?.map(item => <Product key={item._id} Item={item}></Product>)
                 }
             </div>
             <Product></Product>
