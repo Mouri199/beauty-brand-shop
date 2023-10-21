@@ -14,7 +14,7 @@ const AddProduct = () => {
 
     const handleAdded = e => {
         e.preventDefault()
-        const form = e.target; 
+        const form = e.target;
         const name = form.name.value;
         const image = form.image.value;
         const brand = form.brand.value;
@@ -49,8 +49,37 @@ const AddProduct = () => {
     }
     return (
         <div>
-
-            <AddBanner></AddBanner>
+            <div className="carousel w-full">
+                <div id="slide1" className="my-20 carousel-item relative w-full">
+                    <img  src="https://i.ibb.co/f4GNtz3/ezgif-com-webp-to-jpg.jpg" className="w-full lg:h-[1000px]" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide4" className="btn btn-circle">❮</a>
+                        <a href="#slide2" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide2" className=" my-20 carousel-item relative w-full">
+                    <img  src="https://i.ibb.co/nQnnYXh/BIODERMA-THUY-12.jpg" className="w-full lg:h-[1000px]" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" className="btn btn-circle">❮</a>
+                        <a href="#slide3" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide3" className="my-20 carousel-item relative w-full">
+                    <img  src="https://i.ibb.co/WykkdKg/cosrx-top-10-best-selling-korean-skincare-products-2023.webp" className="w-full lg:h-[1000px]" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" className="btn btn-circle">❮</a>
+                        <a href="#slide4" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <div id="slide4" className="my-20 carousel-item relative w-full">
+                    <img  src="https://i.ibb.co/Sn21464/All-About-Cosrx-Acids-1.webp" className="w-full lg:h-[1000px]" />
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" className="btn btn-circle">❮</a>
+                        <a href="#slide1" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+            </div>
+            {/* <AddBanner></AddBanner> */}
 
             <div className=" bg-[#a5c7b5] my-10 mx-auto lg:px-10 py-20 lg:w-[1000px]">
                 <h3 className="text-center lg:text-5xl font-semibold text-[#3b644c] mb-5">Add Products</h3>
@@ -74,7 +103,7 @@ const AddProduct = () => {
                             <p className="lg:text-3xl text-xl font-semibold text-[#3b644c] mb-3">Type</p>
 
                             <input type="text" name="type" placeholder="Enter product type" className="border lg:p-3 p-2 lg:w-[400px]" />
-                         
+
                         </div>
                     </div>
                     <div className="flex gap-5">
