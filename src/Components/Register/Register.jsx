@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 
 const Register = () => {
-    const { createRegister, signInWithGoogle } = useContext(AuthProvider);
+    const { createRegister, signInWithGoogle ,  updateUserDetails} = useContext(AuthProvider);
     const registerNavi = useNavigate()
 
     const [userError, setUserError] = useState();
@@ -37,10 +37,13 @@ const Register = () => {
 
         createRegister(email, password)
             .then(result => {
-                console.log(result.user);
+                
+                updateUserDetails(result.user,name,photo)
+                console.log(result);
                 setUserSuccess("User Created successfully!")
                 e.target.reset()
                 registerNavi('/');
+
                 Swal.fire({
                     icon: "success",
                     title: "Sign In Successful",

@@ -16,7 +16,7 @@ const Service = () => {
                     <h3 className="lg:text-3xl mb-3 font-medium ">About Entice</h3>
                     <h2 className="lg:text-5xl mb-5 font-semibold ">When You Look Good You Feel Good</h2>
                     <p className="  lg:text-2xl">Maxime sequi quasi quas iste odio, voluptates placeat nobis cum harum a doloremque aperiam non ea eius dolorem perferendis vel, sunt doloribus veniam excepturi repellendus soluta architecto. Vitae nisi placeat, aut doloremque inventore pariatur dignissimos laudantium nesciunt.</p>
-                    <button className="btn bg-[#3b644c] text-white">Show More</button>
+                    <button className="btn bg-[#3b644c] hover:bg-slate-600 text-white">Show More</button>
                 </div>
             </div>
 

@@ -12,6 +12,7 @@ import Register from "../Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import BrandDetails from "../Brands/BrandDetails";
 import Update from "../Brands/Update";
+import Details from "../Brands/Details";
 
 const router = createBrowserRouter([
   {
@@ -21,13 +22,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('https://entice-server-7g2onuih2-mouris-projects.vercel.app/brands')
+        loader: () => fetch('http://localhost:8000/brands')
       },
       {
-        path: '/brandDetails/:id',
+        path: '/brandDetails/:name',
         element: <BrandDetails></BrandDetails>,
-        loader: ({ params }) => fetch(`hhttps://entice-server-7g2onuih2-mouris-projects.vercel.app/brands/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:8000/bDetails/${params.name}`)
       },
+
       {
         path: '/beautytips',
         element: <BeautyTips></BeautyTips>
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`https://entice-server-7g2onuih2-mouris-projects.vercel.app/brands/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:8000/brands/${params.id}`)
       },
       {
         path: '/contactus',
@@ -43,7 +45,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/addproduct',
-        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
+        loader: () => fetch ('http://localhost:8000/addproducts')
       },
       {
         path: '/cart',
@@ -57,6 +60,17 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path:'/details/:id',
+        element: <Details></Details>,
+        loader: ({params}) => fetch(`http://localhost:8000/Details/${params.id}`)
+      },
+      {
+        path: '/update/:id',
+        element: <Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:8000/Details/${params.id}`)
+
       }
     ]
 

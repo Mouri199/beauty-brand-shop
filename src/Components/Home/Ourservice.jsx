@@ -14,7 +14,7 @@ const Ourservice = () => {
                     <figure><img src="https://i.ibb.co/XyN00y1/pedicure-at-luxury-spa-2021-08-26-15-34-42-utc.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title text-[#3b644c] ">Padicure</h2>
-                        <button className="btn bg-[#3b644c] text-white ">Show More</button>
+                        <button className="btn bg-[#3b644c] hover:bg-slate-600 text-white ">Show More</button>
 
                     </div>
                 </div>
@@ -23,7 +23,7 @@ const Ourservice = () => {
                     <div className="card-body">
                         <h2 className="card-title text-[#3b644c] ">Manicure</h2>
 
-                        <button className="btn bg-[#3b644c] text-white ">Show More</button>
+                        <button className="btn bg-[#3b644c] hover:bg-slate-600 text-white ">Show More</button>
 
                     </div>
                 </div>
@@ -32,7 +32,7 @@ const Ourservice = () => {
                     <div className="card-body">
                         <h2 className="card-title text-[#3b644c] ">Face Treatment</h2>
 
-                        <button className="btn bg-[#3b644c] text-white ">Show More</button>
+                        <button className="btn bg-[#3b644c] hover:bg-slate-600 text-white ">Show More</button>
 
                     </div>
                 </div>
@@ -41,7 +41,7 @@ const Ourservice = () => {
                     <div className="card-body">
                         <h2 className="card-title text-[#3b644c] ">Lips Treatment</h2>
 
-                        <button className="btn bg-[#3b644c] text-white ">Show More</button>
+                        <button className="btn bg-[#3b644c] hover:bg-slate-600 text-white ">Show More</button>
 
                     </div>
                 </div>
@@ -59,7 +59,7 @@ const Ourservice = () => {
                     <div className="card-body">
                         <h2 className="card-title text-[#3b644c] "> Botox & Filler</h2>
 
-                        <button className="btn bg-[#3b644c] text-white ">Show More</button>
+                        <button className="btn bg-[#3b644c] hover:bg-slate-600 text-white ">Show More</button>
 
                     </div>
                 </div>
