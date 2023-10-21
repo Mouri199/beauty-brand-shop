@@ -19,7 +19,7 @@ const CartData = ({ ItemData, coffees, setCoffees }) => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:8000/cart/${_id}`, {
+        fetch(`https://entice-server.vercel.app/cart/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

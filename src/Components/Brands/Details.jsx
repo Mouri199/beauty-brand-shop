@@ -15,7 +15,7 @@ const Details = () => {
     //   , Image, Name, Price }
     console.log(details);
 
-    fetch('http://localhost:8000/cart', {
+    fetch('https://entice-server.vercel.app/cart', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

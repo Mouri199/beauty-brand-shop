@@ -25,7 +25,7 @@ const AddProduct = () => {
         const addProduct = { name, brand, type, image, price, short };
         console.log(addProduct);
 
-        fetch('http://localhost:8000/brands', {
+        fetch('https://entice-server.vercel.app/brands', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -24,7 +24,7 @@ const Update = () => {
         const addProduct = { name, brand, type, image, price, short };
         console.log(addProduct);
 
-        fetch(`http://localhost:8000/brands/${_id}`, {
+        fetch(`https://entice-server.vercel.app/brands/${_id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

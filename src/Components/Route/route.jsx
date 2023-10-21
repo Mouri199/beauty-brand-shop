@@ -22,23 +22,18 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:8000/brands')
+        loader: () => ('https://entice-server.vercel.app/brands')
       },
       {
         path: '/brandDetails/:name',
         element: <BrandDetails></BrandDetails>,
-        loader: ({params}) => fetch(`http://localhost:8000/bDetails/${params.name}`)
+        loader: ({params}) => fetch(`https://entice-server.vercel.app/bDetails/${params.name}`)
       },
 
       {
         path: '/beautytips',
         element: <BeautyTips></BeautyTips>
       },
-      // {
-      //   path: '/update/:id',
-      //   element: <Update></Update>,
-      //   loader: ({ params }) => fetch(`http://localhost:8000/brands/${params.id}`)
-      // },
       {
         path: '/contactus',
         element: <ContactUs></ContactUs>
@@ -46,12 +41,12 @@ const router = createBrowserRouter([
       {
         path: '/addproduct',
         element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
-        loader: () => fetch ('http://localhost:8000/addproducts')
+        loader: () => fetch ('https://entice-server.vercel.app/addproducts')
       },
       {
         path: '/cart',
         element: <Cart></Cart>,
-        loader: () => fetch(`http://localhost:8000/cart`)
+        loader: () => fetch(`https://entice-server.vercel.app/cart`)
       },
       {
         path: '/login',
@@ -64,12 +59,12 @@ const router = createBrowserRouter([
       {
         path:'/details/:id',
         element: <Details></Details>,
-        loader: ({params}) => fetch(`http://localhost:8000/Details/${params.id}`)
+        loader: ({params}) => fetch(`https://entice-server.vercel.app/Details/${params.id}`)
       },
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:8000/Details/${params.id}`)
+        loader: ({params}) => fetch(`https://entice-server.vercel.app/Details/${params.id}`)
 
       }
     ]
