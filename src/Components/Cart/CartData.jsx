@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 
 
 
-const CartData = ({ ItemData, coffees, setCoffees }) => {
+const CartData = ({ ItemData, carts, setCarts}) => {
 
   const { _id, Image, Name, Price, Rating, BrandName } = ItemData || {}
 
@@ -31,8 +31,8 @@ const CartData = ({ ItemData, coffees, setCoffees }) => {
                 'Your file has been deleted.',
                 'success'
               )
-              const remaining = coffees.filter(cof => cof._id !== _id)
-              setCoffees(remaining)
+              const remaining = carts.filter(cof => cof._id !== _id)
+              setCarts(remaining)
             }
           })
       }
