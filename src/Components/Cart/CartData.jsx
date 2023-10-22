@@ -2,43 +2,11 @@ import Swal from "sweetalert2";
 
 
 
-const CartData = ({ ItemData, carts, setCarts}) => {
+const CartData = ({ ItemData , handleDetele}) => {
 
   const { _id, Image, Name, Price, Rating, BrandName } = ItemData || {}
 
-  const handleDetele = _id => {
-    console.log(_id);
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-
-        fetch(`https://entice-server.vercel.app/cart/${_id}`, {
-          method: 'DELETE'
-        })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data);
-            if (data.deletedCount > 0) {
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
-              const remaining = carts.filter(cof => cof._id !== _id)
-              setCarts(remaining)
-            }
-          })
-      }
-    })
-
-  }
+  
 
   return (
     <div>
@@ -52,7 +20,7 @@ const CartData = ({ ItemData, carts, setCarts}) => {
           <p className="lg:text-3xl font-semibold">{Price}TK</p>
           <div className="lg:flex justify-between">
 
-            <button onClick={() => handleDetele(_id)} className="btn lg:p-2 p-1 bg-[#3b644c] hover:bg-slate-600 text-white">Delete</button>
+            <button onClick={() => handleDetele(ItemData._id)} className="btn lg:p-2 p-1 bg-[#3b644c] hover:bg-slate-600 text-white">Delete</button>
 
           </div>
         </div>
